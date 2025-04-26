@@ -1,0 +1,93 @@
+
+hypertention: (82- 84 %)
+        input:  ( gender	age	currentSmoker	cigsPerDay	diabetes	sysBP	diaBP	BMI	heartRate	chol_category	glucose_category )
+         
+            gender: male- 1, female- 0
+            age: numerical
+            currentSmoker:   yes- 1      no- 0
+            cigsPerDay: numerical
+            diabetes:      yes-1      no- 0
+            sysBP/diaBP:   numerical
+            BMI:    numerical
+            heartRate:   numerical
+            chol_category (mg/dL):   Low- 0 (107, 303)     medium- 1 (303, 500)    high-  2  (500, 696)   
+            glucose_category (mg/dL):   Low- 0 (40, 90)    medium- 1 (90, 140)    high-  2 (140, 200)   very high-  3 (200, 394)
+
+
+            RISK predicted
+
+    
+stroke_prediction: (92- 95 %)
+        input: ( gender	age	 hypertension	heart_disease	ever_married	work_type	Residence_type	    bmi	    smoking_status	)
+
+            gender: male- 1, female- 0
+            age: numerical
+            hypertension:   yes- 1  no- 0
+            heart_disease:  yes- 1  no- 0
+            ever_married:   yes- 1  no- 0
+            work_type:      children- 0   never_worked- 1  self_employed- 2  govt_job- 3  private- 4
+            Residence_type: Urban- 1   Rural- 0
+            bmi: numerical
+            smoking_status: never_smoked- 0     formerly_smoked- 1    smokes- 2
+
+
+            STROKE chances predicted
+
+diabetes_prediction: (74-79%)
+        input: ( Pregnancies	BloodPressure	SkinThickness	BMI	DiabetesPedigreeFunction	Age		glucose_category )
+
+            Pregnancies: male- 0, female- (variable no. of Pregnancies)
+            BloodPressure: ( take diastolic pressure )
+            SkinThickness: {10-20yr: 20,    
+                            20-30yr: 27.795107033639145,
+                            30-40yr: 31.310679611650485,
+                            40-50yr: 31.3,
+                            50-60yr: 29.25,
+                            60-70yr: 37.25,
+                            70-80yr: 30
+                            }
+            BMI:  float value
+            DiabetesPedigreeFunction (family history on diabetes): NoHistory- 0 (0.0, 0.2)   LowHistory- 1 (0.2, 0.5)  ModerateHistory- 2 (0.5, 0.9)  HighHistory- 3 (> 0.5)
+            Age: int values
+            glucose_category:   Low- 0 (40, 90)    medium- 1 (90, 140)    high-  2 (140, 200)   very high-  3 (200, 394)
+                
+
+obesity_prediction: (92-97%)
+        input: ( Gender	 Age	Height	Weight	)
+
+
+heart_disease_prediction: (75-80%)
+        input( age	sex	trestbps	fbs	thalach	exang	chol_category)
+
+        age: numerical
+        sex: male-1  female-0
+        trestbps: (systolic pressure)
+        fbs:    if glucose_category is 'high' or 'very high'- 1   else  0
+        thalach (highest heartbeat recorded) : 10-20yr(195.0) 20-30yr (185.0),    30-40yr(169.5),   40-50yr(159.36231884057972),   50-60yr(147.83050847457628 ),   60-70yr(140.43478260869566),  70-80yr(136.0)      ||  [202.0, 169.5, 159.36231884057972, 147.83050847457628, 140.43478260869566, 136.0]
+        exang (chest pain during exercise?):  yes-1  no-0
+        chol_category:   Low- 0 (107, 303)     medium- 1 (303, 500)    high-  2  (500, 696)
+
+
+COMMON DATA:
+        gender                                  -   male /  female
+        age                                     -   numerical
+        Height	                                - numerical (in meters)
+        Weight	                                - numerical (in kg)		
+
+        sysBP  (systolic pressure)                       -   numerical	
+        diaBP  (diastolic pressure)                      -   numerical	
+        heartRate 	                                 -   numerical (per min)
+
+        cigsPerDay              -   numerical	
+        smoking_status          -       never_smoked   /   formerly_smoked   /   smokes
+
+        chol_category  (cholestrol consumption level in a day)    -   low_intake/ moderate_intake / high_intake
+        glucose_category (glucose/carbs consumption level in a day) - low_intake/  moderate_intake / high_intake / very_high_intake
+	
+        ever_married	-      yes / no
+        Pregnancies	-       numerical
+        work_type	-       child /  never_worked /  self_employed / govt_job /  private
+        Residence_type	-       urban / rural
+
+        DiabetesPedigreeFunction (family history of diabetes) -    no_history/  low_history/   moderate_history/  high_history	
+        exang  (does feel chest pain during exercise) - yes/no

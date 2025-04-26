@@ -1,0 +1,26 @@
+{
+    "hypertension_risk_percent": {
+        "percentage": 95.0,
+        "belongingness": "Risk of having hypertension"
+    },
+    "stroke_risk_percent": {
+        "percentage": 5.0,
+        "belongingness": "Risk of not having stroke"
+    },
+    "diabetes_risk_percent": {
+        "percentage": 5.0,
+        "belongingness": "Risk of not having diabetes"
+    },
+    "obesity_risk_percent": {
+        "percentage": 95.0,
+        "category": "Normal"
+    },
+    "heart_risk_percent": {
+        "percentage": 55.65,
+        "belongingness": "Risk of having heart"
+    },
+    "metabolic_syndrome": {
+        "probability_percent": 51.13,
+        "MetS_flag": 1
+    }
+}
